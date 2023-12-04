@@ -37,11 +37,13 @@ public class EmployeeController {
         return new ResponseEntity<>(employeeService.getEmployeeById(id),HttpStatus.OK);
     }
 
+    //Update Employee API
     @PutMapping("/employees/{id}")
     public ResponseEntity<Employees> updateEmployee(@PathVariable("id") long id , @RequestBody Employees employees){
         return new ResponseEntity<>(employeeService.updateEmployee(employees,id),HttpStatus.OK);
     }
 
+    //Delet Employees API
     @DeleteMapping("/employees/{id}")
     public ResponseEntity<String> deleteEmployee(@PathVariable("id") long id){
         employeeService.deleteEmployee(id);
